@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Ihr Name'
-description 'Beschreibung Ihrer Ressource'
+author 'SirRezi'
+description 'Adds an interactive doorbell system with police dispatch notifications and Roadphone support to FiveM'
 version '1.0.0'
 
 client_scripts {
@@ -20,8 +20,8 @@ shared_script {
 }
 
 files {
-    'sound/sound.wav', -- Stellen Sie sicher, dass diese Datei im Ordner "sound" vorhanden ist
-    'playSound.html' -- Fügen Sie diese Datei hinzu, wenn Sie sie verwenden
+    'sound/sound.wav',
+    'playSound.html'
 }
 
-ui_page 'playSound.html' -- Stellen Sie sicher, dass der Dateiname korrekt ist, falls Sie eine verwenden
+ui_page 'playSound.html' 
