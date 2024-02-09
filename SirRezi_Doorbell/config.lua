@@ -1,15 +1,15 @@
 Config = {}
 
--- Türklingel Konfiguration
-Config.DoorbellKey = 51 -- Standard ist 'E'
-Config.DoorbellMessage = "Möchtest du die Klingel verwenden? Drücke ~b~E~w~ um zu klingeln."
+-- Doorbell Configuration
+Config.DoorbellKey = 51 -- "The default is 'E'."
+Config.DoorbellMessage = "Do you want to use the doorbell? Press E to ring."
 
--- Dispatch-Konfiguration
+-- Dispatch Configuration
 Config.DispatchJob = "police"
-Config.DispatchMessage = "GEH ZUR AMK"
+Config.DispatchMessage = "Your message"
 
--- Türklingel Koordinaten
-Config.DoorbellCoords = vector3(-58.39811, -1418.177, 29.32747) -- Standardkoordinaten, bitte anpassen
+-- Doorbell coordinates
+Config.DoorbellCoords = vector3() -- Default coordinates, please adjust as needed.
 
--- Weitere Konfiguration
-Config.RoadphoneAnonymous = false -- Wenn true, wird die Nachricht anonym gesendet, sonst wird der Absender angezeigt
+-- Additional configuration
+Config.RoadphoneAnonymous = false -- If true, the message will be sent anonymously; otherwise, the sender will be displayed.
