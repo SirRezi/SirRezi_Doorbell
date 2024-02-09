@@ -1,0 +1,13 @@
+<audio id="doorbellAudio" preload="auto">
+    <source id="audioSource" src="" type="audio/wav">
+</audio>
+
+<script>
+    window.addEventListener('message', function(event) {
+        var audio = document.getElementById('doorbellAudio');
+        if (event.data.sound && event.data.src) {
+            audio.src = event.data.src;
+            audio.play();
+        }
+    });
+</script>
