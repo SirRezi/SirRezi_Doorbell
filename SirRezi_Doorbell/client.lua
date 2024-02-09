@@ -13,8 +13,7 @@ RegisterNetEvent('doorbell:ring')
 AddEventHandler('doorbell:ring', function()
     if not ringing then
         ringing = true
-        local doorbellMessage = Config.DoorbellMessage or "Möchtest du die Klingel verwenden? Drücke ~b~E~w~ um zu klingeln."
-        TriggerEvent("chatMessage", doorbellMessage, {255, 255, 255})
+        TriggerEvent("chatMessage", Config.DoorbellMessage, {255, 255, 255})
         
         Citizen.CreateThread(function()
             while true do
@@ -22,7 +21,7 @@ AddEventHandler('doorbell:ring', function()
                 if IsControlJustReleased(0, Config.DoorbellKey) then
                     local playerCoords = GetEntityCoords(PlayerPedId())
                     TriggerServerEvent('doorbell:ringDoorbell', playerCoords)
-                    Citizen.Wait(5000) -- Anpassen je nach Dauer des Türklingelgeräusches
+                    Citizen.Wait(5000)
                     ringing = false
                     break
                 end
@@ -37,7 +36,7 @@ Citizen.CreateThread(function()
         local playerCoords = GetEntityCoords(PlayerPedId())
         local distance = #(playerCoords - Config.DoorbellCoords)
 
-        if distance < 10.0 then -- Marker anzeigen, wenn Spieler sich in der Nähe befindet
+        if distance < 10.0 then
             if doorbellMarker == nil then
                 doorbellMarker = true
                 DrawMarker(1, Config.DoorbellCoords.x, Config.DoorbellCoords.y, Config.DoorbellCoords.z - 1.0, 0, 0, 0, 0, 0, 0, 2.0, 2.0, 0.5, 255, 255, 0, 200, false, true, 2, nil, nil, false)
